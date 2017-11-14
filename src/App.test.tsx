@@ -14,9 +14,11 @@ it('try out spread operator', () => {
   expect(changed).toEqual(expected);
 });
 
-// it('try out spread operator in an array', () => {
-//   const start = [{a: 'a1', b: 'b1'}, {a: 'a2', b: 'b2'}];
-//   const expected = [{a: 'a1', b: 'newB1', c: 'c1'}, {a: 'a2', b: 'newB2', c: 'c2'}];
-//   const changed = start.map((x, i) => {...x, b: 'newB' + i.toString()});
-//   expect(changed).toEqual(expected);
-// });
+it('try out spread operator in an array', () => {
+  const start = [{a: 'a0', b: 'b0'}, {a: 'a1', b: 'b1'}];
+  const expected = [{a: 'a0', b: 'newB0', c: 'c0'}, {a: 'a1', b: 'newB1', c: 'c1'}];
+  const changed = start.map((x, i) => { 
+    return {...x, b: 'newB' + i.toString(), c: 'c' + i.toString()}; 
+  });
+  expect(changed).toEqual(expected);
+});
