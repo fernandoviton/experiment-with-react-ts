@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import JSONTree from 'react-json-tree';
+import fs from 'fs';
 
 const logo = require('./logo.svg');
 
@@ -12,6 +13,10 @@ const json = {
     }};
 
 class App extends React.Component {
+  fs.readFile('sample.json', (err, data) => {
+    console.log(data);
+  });
+
   render() {
     return (
       <div className="App">
