@@ -1,7 +1,15 @@
 import * as React from 'react';
 import './App.css';
+import JSONTree from 'react-json-tree';
 
 const logo = require('./logo.svg');
+
+const json = {
+    array: [1, 2, 3],
+    bool: true,
+    object: {
+      foo: 'bar'
+    }};
 
 class App extends React.Component {
   render() {
@@ -11,9 +19,7 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <JSONTree data={json}/>
       </div>
     );
   }
